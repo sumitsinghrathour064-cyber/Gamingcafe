@@ -1,0 +1,578 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at right, #1a0000 0%, #000 60%);
+  color: white;
+  overflow-x: hidden;
+}
+
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  position: fixed;
+  scroll-behavior: smooth;
+}
+
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: red;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.nav-links li {
+  font-size: 14px;
+  color: #aaa;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.nav-links li:hover {
+  color: white;
+}
+
+/* UNDERLINE ANIMATION */
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: red;
+  transition: 0.3s;
+}
+
+.nav-links li:hover::after,
+.nav-links .active::after {
+  width: 100%;
+}
+
+.nav-links .active {
+  color: white;
+}
+
+/* RIGHT */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mail {
+  font-size: 18px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* BUTTON */
+.book-btn {
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 1px solid red;
+  background: transparent;
+  color: white;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: red;
+  box-shadow: 0 0 15px red;
+}
+
+
+/* ================= HERO ================= */
+
+/* HERO */
+.hero {
+  display: flex;
+  height: 100vh;
+  padding: 0 8%;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* LEFT SIDE */
+.hero-left {
+  width: 50%;
+  z-index: 2;
+  animation: fadeUp 1s ease;
+}
+
+.welcome {
+  letter-spacing: 3px;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.hero-left h1 {
+  font-size: 85px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.hero-left h1 span {
+  color: #ff0000;
+  text-shadow: 0 0 25px #ff0000;
+  animation: glow 2s infinite alternate;
+}
+
+.sub-text {
+  color: #bbb;
+  margin: 20px 0;
+}
+
+/* BUTTONS */
+/* BUTTONS */
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+/* COMMON */
+.btn {
+  text-decoration: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* START BUTTON (RED GLOW) */
+.start {
+  background: linear-gradient(70deg, #ff0000, #b30000);
+  color: white;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+}
+
+
+
+/* WATCH BUTTON (VISIBLE FIX + GLASS STYLE) */
+.watch {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+/* TEXT VISIBLE FIX */
+.watch span {
+  color: white;
+}
+
+.watch:hover {
+  background: white;
+  color: black;
+  transform: translateY(-3px);
+}
+/* FEATURES */
+.features {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.features div {
+  background: rgba(255,255,255,0.05);
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.features div:hover {
+  background: red;
+  transform: translateY(-5px);
+}
+
+/* RIGHT SIDE */
+.hero-right {
+  width: 50%;
+  position: relative;
+}
+
+.hero-right img {
+  width: 100%;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px red);
+}
+
+/* BACKGROUND GLOW */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: red;
+  right: 10%;
+  top: 20%;
+  filter: blur(150px);
+  opacity: 0.4;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px red;
+  }
+  to {
+    text-shadow: 0 0 40px red;
+  }
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+
+/* SECTION */
+.gaming-setup {
+  padding: 80px 8%;
+  background: #07090f;
+  text-align: center;
+}
+
+/* TITLE */
+.section-title {
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: white;
+  text-shadow: 0 0 15px red;
+}
+
+/* GRID */
+.setup-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.setup-card {
+  width: 300px;
+  background: #111;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.4s;
+  cursor: pointer;
+  position: relative;
+}
+
+/* IMAGE */
+.setup-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* TEXT */
+.setup-card h3 {
+  margin: 15px 0 5px;
+}
+
+.setup-card p {
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+/* HOVER EFFECT 🔥 */
+.setup-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px red;
+}
+
+/* GLOW BORDER EFFECT */
+.setup-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(45deg, red, transparent, red);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.setup-card:hover::before {
+  opacity: 1;
+}
+
+/* SECTION SAME HEIGHT */
+.pricing {
+  min-height: 100vh;   
+  padding: 80px 8%;
+  background: #05070d;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* CONTAINER */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* CARD */
+.price-card {
+  width: 280px;
+  background: #111;
+  padding: 30px 20px;
+  border-radius: 15px;
+  position: relative;
+  transition: 0.4s;
+}
+
+/* TEXT */
+.price-card h3 {
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 28px;
+  color: red;
+  margin-bottom: 15px;
+}
+
+/* LIST */
+.price-card ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.price-card ul li {
+  margin: 8px 0;
+  color: #bbb;
+}
+
+/* BUTTON */
+.price-card button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: red;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.price-card button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px red;
+}
+
+/* HOVER */
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px red;
+}
+
+/* BEST PLAN 🔥 */
+.price-card.active {
+  border: 2px solid red;
+  transform: scale(1.05);
+}
+
+/* TAG */
+.tag {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+/* SECTION SAME HEIGHT */
+.gallery {
+  min-height: 100vh;
+  padding: 80px 8%;
+  background: #07090f;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* GRID */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 40px;
+}
+
+/* ITEM */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+/* IMAGE */
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+/* HOVER ZOOM 🔥 */
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* RED OVERLAY GLOW */
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 0, 0, 0.2);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+/* SECTION */
+.contact {
+  min-height: 100vh;
+  padding: 80px 8%;
+  background: #07090f;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* CONTAINER */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* LEFT */
+.contact-info {
+  flex: 1;
+  text-align: left;
+}
+
+.contact-info h3 {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  color: #bbb;
+}
+
+/* SOCIAL */
+.socials a {
+  margin-right: 10px;
+  font-size: 20px;
+  color: white;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+
+/* FORM */
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* INPUT */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #111;
+  color: white;
+}
+
+.contact-form textarea {
+  height: 120px;
+}
+
+/* BUTTON */
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: red;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  box-shadow: 0 0 20px red;
+  transform: scale(1.05);
+}
